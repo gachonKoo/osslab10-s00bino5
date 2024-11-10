@@ -18,9 +18,17 @@ jobs:
       uses: classroom-resources/autograding-io-grader@v1
       with:
         test-name: test0
-        setup-command: ''
+        setup-command: 'notepad divisors.py'
         command: python divisors.py 100
-        input: ''
+        input: 'import sys
+
+number = int(sys.argv[1])
+
+for i in number:
+if number%i == 0:
+print(i, end=" ")
+
+print()'
         expected-output: 1 2 4 5 10 20 25 50 100
         comparison-method: contains
         timeout: 10
@@ -42,3 +50,4 @@ jobs:
         TEST1_RESULTS: "${{steps.test1.outputs.result}}"
       with:
         runners: test0,test1
+
