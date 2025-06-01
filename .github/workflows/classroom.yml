@@ -42,4 +42,3 @@ jobs:
         TEST1_RESULTS: "${{steps.test1.outputs.result}}"
       with:
         runners: test0,test1
-
